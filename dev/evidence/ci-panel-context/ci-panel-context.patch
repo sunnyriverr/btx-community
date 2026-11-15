@@ -1,0 +1,75 @@
+--- a/site/build.py
++++ b/site/build.py
+@@ -664,6 +664,8 @@
+ 
+     title: Text
+     lead: Text
++    context: Text
++    known_state: Text
+     raw: Text
+     noscript: Text
+     loading: Text
+--- a/site/content/hub.yaml
++++ b/site/content/hub.yaml
+@@ -1851,6 +1851,10 @@
+       Der letzte nächtliche Linux-Build mit Unit- und Funktionstests, den der Betreiber der
+       Statusseite als Job CI-0 veröffentlicht, live aus deren API gelesen. Es ist ein einzelner
+       Build, nicht die Build-Matrix auf dem Fork aus der Tabelle oben.
++  context:
++    en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
++    de: "Vergleichen Sie Fehler mit denselben Tests und Build-Einstellungen auf dem Basis-Commit, bevor Sie sie als Regressionen einstufen. Die Unit-Test-Zahlen schließen die langsamen matmul_v4_rc_stage3_*-Testsuites aus."
++  known_state: { en: "Known test state and baseline comparison", de: "Bekannter Teststand und Vergleich mit dem Basis-Commit" }
+   raw: { en: The run as JSON, de: Der Lauf als JSON }
+   noscript:
+     en: "This panel is filled in by JavaScript. The run as raw data: "
+--- a/site/content/translations/es.yaml
++++ b/site/content/translations/es.yaml
+@@ -5,6 +5,10 @@
+ 
+ schema_version: 1
+ translations:
++- en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
++  es: "Compare los fallos con las mismas pruebas y opciones de compilación en el commit base antes de considerarlos regresiones. Los totales de pruebas unitarias excluyen las suites lentas matmul_v4_rc_stage3_*."
++- en: "Known test state and baseline comparison"
++  es: "Estado conocido de las pruebas y comparación con el commit base"
+ - en: Build result
+   es: Resultado de la compilación
+ - en: >-
+--- a/site/content/translations/fr.yaml
++++ b/site/content/translations/fr.yaml
+@@ -5,6 +5,10 @@
+ 
+ schema_version: 1
+ translations:
++- en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
++  fr: "Comparez les échecs avec les mêmes tests et paramètres de compilation sur le commit de base avant de les considérer comme des régressions. Les totaux des tests unitaires excluent les suites lentes matmul_v4_rc_stage3_*."
++- en: "Known test state and baseline comparison"
++  fr: "État connu des tests et comparaison avec le commit de base"
+ - en: Build result
+   fr: Résultat de la compilation
+ - en: >-
+--- a/site/content/translations/zh.yaml
++++ b/site/content/translations/zh.yaml
+@@ -6,6 +6,10 @@
+ 
+ schema_version: 1
+ translations:
++- en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
++  zh: "在认定为回归之前，应在基准提交上使用相同的测试和构建设置比较失败结果。单元测试总数不包含耗时较长的 matmul_v4_rc_stage3_* 测试套件。"
++- en: "Known test state and baseline comparison"
++  zh: "已知测试状态与基准比较"
+ - en: Build result
+   zh: 构建结果
+ - en: >-
+--- a/site/templates/dev.html.j2
++++ b/site/templates/dev.html.j2
+@@ -386,6 +386,9 @@
+             <a class="c-link" href="{{ ci_api }}" rel="noopener noreferrer">{{ ci["raw"] }} ↗</a>
+           </div>
+           <p class="c-dev__lead">{{ ci["lead"] }}</p>
++          <p class="c-muted">{{ ci["context"] }}
++            <a class="c-link" href="https://github.com/BTX-Community/btx-community/blob/main/dev/04-build-and-test.md#4-functional-tests" rel="noopener noreferrer">{{ ci["known_state"] }} ↗</a>
++          </p>
+           <noscript><p class="c-ci__status">{{ ci["noscript"] }}<a class="c-link" href="{{ ci_api }}" rel="noopener noreferrer">ci.json ↗</a></p></noscript>
+           <p class="c-ci__status" data-ci="status" role="status"></p>
+           <div class="c-ci__run" data-ci="run" hidden>

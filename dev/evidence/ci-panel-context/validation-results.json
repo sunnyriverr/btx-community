@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-15T07:02:28.695002+00:00",
+  "base": "0a636a84c281e341850ee92aca70b9d149419ddf",
+  "verified_source_blobs": 81,
+  "python": "python3.11",
+  "dependency_versions": {
+    "annotated-types": "0.8.0",
+    "jinja2": "3.1.6",
+    "markupsafe": "3.0.4",
+    "pydantic": "2.14.1",
+    "pydantic-core": "2.50.1",
+    "pyyaml": "6.0.3",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.4"
+  },
+  "results": [
+    {
+      "name": "build",
+      "command": [
+        "python3.11",
+        "-B",
+        "site/build.py",
+        "--out",
+        "<local-task>/rendered"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.821
+    },
+    {
+      "name": "site-tests",
+      "command": [
+        "python3.11",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "site/tests"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.711
+    }
+  ],
+  "free_after": 1360805888,
+  "native_tests_run": false,
+  "site_js_tests_run": false,
+  "browser_tested": false,
+  "published": false
+}
