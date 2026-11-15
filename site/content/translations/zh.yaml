@@ -6,6 +6,10 @@
 
 schema_version: 1
 translations:
+- en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
+  zh: "在认定为回归之前，应在基准提交上使用相同的测试和构建设置比较失败结果。单元测试总数不包含耗时较长的 matmul_v4_rc_stage3_* 测试套件。"
+- en: "Known test state and baseline comparison"
+  zh: "已知测试状态与基准比较"
 - en: Build result
   zh: 构建结果
 - en: >-

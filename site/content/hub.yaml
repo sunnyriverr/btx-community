@@ -1851,6 +1851,10 @@ ci:
       Der letzte nächtliche Linux-Build mit Unit- und Funktionstests, den der Betreiber der
       Statusseite als Job CI-0 veröffentlicht, live aus deren API gelesen. Es ist ein einzelner
       Build, nicht die Build-Matrix auf dem Fork aus der Tabelle oben.
+  context:
+    en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
+    de: "Vergleichen Sie Fehler mit denselben Tests und Build-Einstellungen auf dem Basis-Commit, bevor Sie sie als Regressionen einstufen. Die Unit-Test-Zahlen schließen die langsamen matmul_v4_rc_stage3_*-Testsuites aus."
+  known_state: { en: "Known test state and baseline comparison", de: "Bekannter Teststand und Vergleich mit dem Basis-Commit" }
   raw: { en: The run as JSON, de: Der Lauf als JSON }
   noscript:
     en: "This panel is filled in by JavaScript. The run as raw data: "

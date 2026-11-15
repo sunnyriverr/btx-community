@@ -5,6 +5,10 @@
 
 schema_version: 1
 translations:
+- en: "Compare failures with the same tests and build settings on the base commit before treating them as regressions. Unit totals exclude the slow matmul_v4_rc_stage3_* suites."
+  es: "Compare los fallos con las mismas pruebas y opciones de compilación en el commit base antes de considerarlos regresiones. Los totales de pruebas unitarias excluyen las suites lentas matmul_v4_rc_stage3_*."
+- en: "Known test state and baseline comparison"
+  es: "Estado conocido de las pruebas y comparación con el commit base"
 - en: Build result
   es: Resultado de la compilación
 - en: >-

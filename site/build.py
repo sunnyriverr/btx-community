@@ -664,6 +664,8 @@ class CiPanel(_Model):
 
     title: Text
     lead: Text
+    context: Text
+    known_state: Text
     raw: Text
     noscript: Text
     loading: Text

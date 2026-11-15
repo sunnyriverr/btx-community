@@ -386,6 +386,9 @@
             <a class="c-link" href="{{ ci_api }}" rel="noopener noreferrer">{{ ci["raw"] }} ↗</a>
           </div>
           <p class="c-dev__lead">{{ ci["lead"] }}</p>
+          <p class="c-muted">{{ ci["context"] }}
+            <a class="c-link" href="https://github.com/BTX-Community/btx-community/blob/main/dev/04-build-and-test.md#4-functional-tests" rel="noopener noreferrer">{{ ci["known_state"] }} ↗</a>
+          </p>
           <noscript><p class="c-ci__status">{{ ci["noscript"] }}<a class="c-link" href="{{ ci_api }}" rel="noopener noreferrer">ci.json ↗</a></p></noscript>
           <p class="c-ci__status" data-ci="status" role="status"></p>
           <div class="c-ci__run" data-ci="run" hidden>
